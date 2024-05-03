@@ -28,6 +28,11 @@ class ListsController < ApplicationController
   private
 
   # Strong parameters for list creation
+
+  def set_list
+    @list = List.find(params[:id])
+  end
+
   def list_params
     params.require(:list).permit(:name)
   end
